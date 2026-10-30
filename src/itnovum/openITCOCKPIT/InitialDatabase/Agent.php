@@ -3187,7 +3187,7 @@ class Agent extends Importer {
                     "Expected number of GPUs: critical if fewer GPUs are found (0 = off). The agent wizard sets the number of GPUs which are found when the service is created.\n" .
                     "State for throttling: state if the GPU slows down because of the hardware or the temperature (ok, warning, critical or unknown).\n" .
                     "Critical Xid codes and ignored Xid codes: comma separated lists which override the Xid catalog, e.g. 13,31.\n" .
-                    "State for driver errors: state for display driver timeouts (TDR) and errors of the GPU drivers in the Windows event log of the last 24 hours.",
+                    "State for driver errors: state for errors of the GPU drivers of the last 24 hours: display driver timeouts (TDR) and errors in the Windows event log, GPU hangs and resets of the amdgpu driver in the Linux kernel log.",
                 'commandarguments' => [
                     [
                         'name'       => '$ARG1$',
@@ -3207,7 +3207,7 @@ class Agent extends Importer {
                     ],
                     [
                         'name'       => '$ARG5$',
-                        'human_name' => 'State for driver errors (Windows)'
+                        'human_name' => 'State for driver errors'
                     ]
                 ]
             ],
